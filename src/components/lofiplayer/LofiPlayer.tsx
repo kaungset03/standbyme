@@ -9,7 +9,7 @@ import {
 
 const LofiPlayer = () => {
   return (
-    <article className="flex flex-col gap-y-6 pb-8">
+    <article className="flex flex-col gap-y-6 p-4">
       <div className="text-center">
         <h3 className="text-lg font-medium">Stand By Me</h3>
         <span className="text-sm">Oasis</span>
@@ -31,23 +31,23 @@ const LofiPlayer = () => {
           </button>
         </li>
       </ul>
-      <ul className="w-4/5 mx-auto flex flex-col gap-y-5">
+      <ul className="w-full mx-auto flex flex-col gap-y-5 p-3">
         <li className="flex justify-between items-center">
           <span>Volume</span>
-          <button>
-            <Music />
+          <button className="bg-textPrimary rounded-lg p-2 text-background">
+            <Music size={18} />
           </button>
         </li>
         <li className="flex items-center justify-between">
           <span>Rain</span>
-          <button>
-            <Droplet />
+          <button className="bg-textPrimary rounded-lg p-2 text-background">
+            <Droplet size={18} />
           </button>
         </li>
         <li className="flex items-center justify-between">
           <span>Fire</span>
-          <button>
-            <Flame />
+          <button className="bg-textPrimary rounded-lg p-2 text-background">
+            <Flame size={18} />
           </button>
         </li>
       </ul>
