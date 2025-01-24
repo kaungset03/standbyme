@@ -8,7 +8,7 @@ import Youtube from "./components/youtube/Youtube";
 
 const App = () => {
   const [highestZIndex, setHighestZIndex] = useState(1);
-  const [openedWindows, setOpenedWindows] = useState<string[]>([]);
+  const [openedWindows, setOpenedWindows] = useState<string[]>(["Lofi Player"]);
 
   const bringToFront = () => {
     const newZIndex = highestZIndex + 1;

@@ -1,4 +1,4 @@
-import { Play, Save } from "lucide-react";
+import { Save } from "lucide-react";
 
 const Youtube = () => {
   return (
@@ -13,10 +13,15 @@ const Youtube = () => {
           <Save />
         </button>
       </div>
-      <div className="w-full aspect-video rounded-md flex justify-center items-center border-2 border-textPrimary">
-        <button className="border border-textPrimary rounded-md px-4 py-2">
-          <Play />
-        </button>
+      <div className="w-full aspect-video relative rounded-md overflow-hidden">
+        <iframe
+          className="w-full h-full absolute top-0 left-0"
+          src="https://youtube.com/embed/playlist?list=PL7AF1C14AF1B05894&si=brhjLUtqbspAgUum"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
     </article>
   );
