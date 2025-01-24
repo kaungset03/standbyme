@@ -9,12 +9,12 @@ ul::-webkit-scrollbar {
 
 ul::-webkit-scrollbar-track {
   background: #d5a78d;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 ul::-webkit-scrollbar-thumb {
   background: #555;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 ul::-webkit-scrollbar-thumb:hover {

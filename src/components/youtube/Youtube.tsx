@@ -6,7 +6,7 @@ const Youtube = () => {
       <div className="flex items-center gap-x-3">
         <input
           type="text"
-          className="bg-transparent border-2 border-textPrimary rounded-md flex-1 p-1 outline-none focus:outline-textPrimary placeholder:text-sm placeholder:text-textSecondary"
+          className="bg-transparent border-2 border-textPrimary text-sm rounded-md flex-1 p-2 outline-none focus:outline-textPrimary placeholder:text-sm placeholder:text-textSecondary"
           placeholder="Enter the youtube playlist url"
         />
         <button className="border-2 border-textPrimary rounded-md p-1">

@@ -1,18 +1,23 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 type AppWindowProps = {
   children: React.ReactNode;
   title: string;
+  bringToFront: () => number;
 };
 
-const AppWindow = ({ title, children }: AppWindowProps) => {
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+const AppWindow = ({ title, children, bringToFront }: AppWindowProps) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [zIndex, setZIndex] = useState(1);
+
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const newZIndex = bringToFront();
+    setZIndex(newZIndex);
     setIsDragging(true);
     setOffset({
       x: e.clientX - position.x,
@@ -36,13 +41,25 @@ const AppWindow = ({ title, children }: AppWindowProps) => {
   };
 
   const handleMouseUp = () => {
-    console.log("mouseup");
     setIsDragging(false);
   };
 
+  useEffect(() => {
+    if (ref.current) {
+      const elementWidth = ref.current.offsetWidth;
+
+      const windowWidth = window.innerWidth;
+
+      setPosition({
+        x: (windowWidth - elementWidth) / 2,
+        y: 100,
+      });
+    }
+  }, []);
+
   return (
     <section
-      style={{ left: position.x, top: position.y }}
+      style={{ left: position.x, top: position.y, zIndex }}
       className="absolute bg-background border-2 border-textPrimary shadow-window rounded-lg flex flex-col z-10"
       ref={ref}
     >
@@ -50,7 +67,7 @@ const AppWindow = ({ title, children }: AppWindowProps) => {
         className="cursor-move flex justify-between items-center py-2 px-3 bg-card rounded-t-md border-b-2 border-b-textPrimary"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
-        onMouseMove={(e) => handleMouseMove(e)}
+        onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseUp}
       >
         <h2 className="font-semibold w-fit">{title}</h2>
