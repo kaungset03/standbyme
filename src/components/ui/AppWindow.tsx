@@ -43,11 +43,11 @@ const AppWindow = ({ title, children }: AppWindowProps) => {
   return (
     <section
       style={{ left: position.x, top: position.y }}
-      className="absolute w-1/3 max-w-sm border-2 border-textPrimary shadow-window rounded-lg flex flex-col z-10"
+      className="absolute bg-background border-2 border-textPrimary shadow-window rounded-lg flex flex-col z-10"
       ref={ref}
     >
       <div
-        className="cursor-move flex justify-between items-center py-2 px-3 bg-card rounded-t-lg border-b-2 border-b-textPrimary"
+        className="cursor-move flex justify-between items-center py-2 px-3 bg-card rounded-t-md border-b-2 border-b-textPrimary"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={(e) => handleMouseMove(e)}

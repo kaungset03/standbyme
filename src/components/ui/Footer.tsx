@@ -1,4 +1,4 @@
-import { Globe, Music, Notebook, Timer, User } from "lucide-react";
+import { Music, Notebook, Timer, User, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
         <Timer />
       </button>
       <button className="p-2 border border-textPrimary rounded-md">
-        <Globe />
+        <Youtube />
       </button>
       <button className="p-2 border border-textPrimary rounded-md">
         <Notebook />

@@ -7,11 +7,11 @@ export default {
         background: "#d5a78d",
         card: "#f37600",
         textPrimary: "#100001",
-        textSecondary: "#ec4719",
+        textSecondary: "#1e1e1e",
         accent: "#7e70bf",
       },
       boxShadow: {
-        window: "5px 5px #100001",
+        window: "-6px 6px #100001",
       }
     },
   },

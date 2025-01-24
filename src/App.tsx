@@ -3,6 +3,7 @@ import AppWindow from "./components/ui/AppWindow";
 import Footer from "./components/ui/Footer";
 import TodoList from "./components/todolist/TodoList";
 import LofiPlayer from "./components/lofiplayer/LofiPlayer";
+import Youtube from "./components/youtube/Youtube";
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
         </AppWindow>
         <AppWindow title="Lofi Player">
           <LofiPlayer />
+        </AppWindow>
+        <AppWindow title="Youtube Playlist">
+          <Youtube />
         </AppWindow>
       </main>
       <Footer />

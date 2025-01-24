@@ -3,7 +3,7 @@ import { Plus, Trash } from "lucide-react";
 const TodoList = () => {
   const todos = [0, 1, 2, 3, 4, 5, 6];
   return (
-    <article className="flex flex-col gap-y-4 p-4">
+    <article className="flex flex-col gap-y-4 p-4 w-full max-w-[350px]">
       <form className="flex items-center gap-x-3">
         <input
           type="text"
@@ -20,7 +20,7 @@ const TodoList = () => {
             key={todo}
           >
             <div className="w-2/3">
-              <p className="text-sm font-medium">Lorem ipsum dolor sit.</p>
+              <p className="text-sm font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
               <span className="text-xs">Fri 24 Jan 00:04</span>
             </div>
             <button>

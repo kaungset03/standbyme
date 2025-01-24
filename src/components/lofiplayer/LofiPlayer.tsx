@@ -6,10 +6,11 @@ import {
   SkipBack,
   SkipForward,
 } from "lucide-react";
+import VolumeSlider from "./VolumeSlider";
 
 const LofiPlayer = () => {
   return (
-    <article className="flex flex-col gap-y-6 p-4">
+    <article className="flex flex-col gap-y-6 p-4 min-w-96">
       <div className="text-center">
         <h3 className="text-lg font-medium">Stand By Me</h3>
         <span className="text-sm">Oasis</span>
@@ -32,21 +33,24 @@ const LofiPlayer = () => {
         </li>
       </ul>
       <ul className="w-full mx-auto flex flex-col gap-y-5 p-3">
-        <li className="flex justify-between items-center">
-          <span>Volume</span>
-          <button className="bg-textPrimary rounded-lg p-2 text-background">
+        <li className="grid grid-cols-6 gap-3 items-center">
+          <span className="text-sm font-medium">Volume:</span>
+          <VolumeSlider />
+          <button className="w-fit ml-auto bg-textPrimary rounded-lg p-2 text-background">
             <Music size={18} />
           </button>
         </li>
-        <li className="flex items-center justify-between">
-          <span>Rain</span>
-          <button className="bg-textPrimary rounded-lg p-2 text-background">
+        <li className="grid grid-cols-6 gap-3 items-center">
+          <span className="text-sm font-medium">Rain:</span>
+          <VolumeSlider />
+          <button className="w-fit ml-auto border border-textPrimary rounded-lg p-2 text-textPrimary">
             <Droplet size={18} />
           </button>
         </li>
-        <li className="flex items-center justify-between">
-          <span>Fire</span>
-          <button className="bg-textPrimary rounded-lg p-2 text-background">
+        <li className="grid grid-cols-6 gap-3 items-center">
+          <span className="text-sm font-medium">Fire:</span>
+          <VolumeSlider />
+          <button className="w-fit ml-auto border border-textPrimary rounded-lg p-2 text-textPrimary">
             <Flame size={18} />
           </button>
         </li>
