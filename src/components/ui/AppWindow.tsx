@@ -5,9 +5,15 @@ type AppWindowProps = {
   children: React.ReactNode;
   title: string;
   bringToFront: () => number;
+  closeWindow: (title: string) => void;
 };
 
-const AppWindow = ({ title, children, bringToFront }: AppWindowProps) => {
+const AppWindow = ({
+  title,
+  children,
+  bringToFront,
+  closeWindow,
+}: AppWindowProps) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -44,6 +50,10 @@ const AppWindow = ({ title, children, bringToFront }: AppWindowProps) => {
     setIsDragging(false);
   };
 
+  const handleClose = () => {
+    closeWindow(title);
+  };
+
   useEffect(() => {
     if (ref.current) {
       const elementWidth = ref.current.offsetWidth;
@@ -71,7 +81,7 @@ const AppWindow = ({ title, children, bringToFront }: AppWindowProps) => {
         onMouseLeave={handleMouseUp}
       >
         <h2 className="font-semibold w-fit">{title}</h2>
-        <button className="p-1 border-2 border-textPrimary" aria-label="Close">
+        <button className="p-1 border-2 border-textPrimary" aria-label="Close" onClick={handleClose}>
           <X size={18} />
         </button>
       </div>
